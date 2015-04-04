@@ -1,0 +1,224 @@
+<ul class="teacher-prepare-options">
+                      <li>
+              <i class="icon-ok"></i> 
+              <i>подготовка к ЕГЭ</i>
+            </li>
+                                <li>
+              <i class="icon-ok"></i> 
+              <i>подготовка к ГИА</i>
+            </li>
+                  </ul>
+<div class="dropdown choose-town-toggale-button">
+  <a class="btn dropdown-toggle nav nav-menu" data-toggle="dropdown" href="#">
+    Барнаул
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu choose-town-menu" role="menu" aria-labelledby="dLabel">
+    
+      <li class="active">
+        <a href="http://teacherguild.core/">
+          Барнаул
+        </a>
+      </li>
+    
+      <li>
+        <a href="http://novosibirsk.teacherguild.core/">
+          Новосибирск
+        </a>
+      </li>
+    
+      <li>
+        <a href="http://kemerovo.teacherguild.core/">
+          Кемерово
+        </a>
+      </li>
+    
+      <li>
+        <a href="http://novokuznetsk.teacherguild.core/">
+          Новокузнецк
+        </a>
+      </li>
+    
+      <li>
+        <a href="http://krasnoyarsk.teacherguild.core/">
+          Красноярск
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div style="width: 100%; float: right">
+    <table class="teacher-info-table ">
+      <tbody><tr>
+        <td class="teacher-info-label ">
+          Образование: вуз, специальность, год окончания
+          </td>
+          <td>
+            ыфвфы
+          </td>
+      </tr>
+      <tr>
+        <td class="teacher-info-label  teacher-empty-label ">
+          Степени, звания, дипломы, награды
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="teacher-info-label  teacher-empty-label ">
+          Опыт работы в образовательных учреждениях
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="teacher-info-label  teacher-empty-label ">
+          Опыт частной репетиторской деятельности
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="teacher-info-label  teacher-empty-label ">
+          Возможность выезда (города, районы, ветки метро)
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="teacher-info-label  teacher-empty-label ">
+          Возможность проведения занятия у себя
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="teacher-info-label  teacher-empty-label ">
+          Другая информация
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      </tbody></table>
+    <hr>
+    
+    <div class="row-fluid">
+  <form action="/response" method="POST">
+    <div class="form-vertical half span5">
+      <h1>Оставить отзыв</h1>
+      
+      
+        <input type="hidden" name="response[teacher-id]" value="26dbbc36717d8bcbfa1c051bfa000591">
+      
+
+	  <div class="control-group">
+	    <label class="control-label ">
+		  <input type="text" placeholder="Ваше имя" name="response[name]" value="">
+		  <div class="btn-group pull-right" data-toggle="buttons-radio">
+            <button type="button" class="btn  active" id="like">
+              <input type="radio" class="hidden-input" name="response[mark]" checked="checked" value="1" style="display: none;">
+              <i class="icon-thumbs-up"></i>
+            </button>
+		    <button type="button" class="btn " id="dislike">
+              <input type="radio" class="hidden-input" name="response[mark]" value="0" style="display: none;">
+              <i class="icon-thumbs-down "></i>
+            </button>
+		  </div>																				
+	    </label>
+	    <div class="controls">
+		  <textarea name="response[responsetext]" class="description span12" placeholder="Отзыв"></textarea>
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <div class="controls pull-right">
+		  <button type="submit" class="btn btn-danger btn-large">Оставить отзыв <i class="icon-chevron-right icon-white"></i></button>
+	    </div>
+	  </div>
+    </div>
+
+    <div class="form-vertical half well span6 ">
+
+
+	  <i>
+	    Все отзывы после предварительной проверки на достоверность публикуются
+	    без изменений.
+	    Уважаемые клиенты, пожалуйста, оставляйте развернутые отзывы - эта
+	    информация очень важна для повышения качества нашей работы. Данные,
+	    которые могут быть полезными для наших будущих клиентов:
+	  </i>
+      <br>
+      <br>
+
+	  <ul class="less">
+	    <li>В какой форме проходят ваши занятия</li>
+	    <li> Доступно ли репетитор обьясняет предмет</li>
+	    <li> Основные плюсы и минусы занятий с этим репетитором</li>
+	    <li> Довольны ли вы достигнутым результатом</li>
+	  </ul>
+    </div>
+  </form>
+</div>
+<script src="/js/like-response.js">
+</script>
+
+
+
+    
+    
+  <div id="responses-table">
+    <h1>Отзывы</h1>
+    <table id="responses-table">
+      <tbody>
+        
+          <tr>
+            
+            <td>
+              
+              <div class="response-text">
+                foooooooo
+              </div>
+              
+              <div class="response-author-name">
+                — tolya
+                
+                  <button type="button" class="btn btn-danger disabled">
+                    <i class="icon-thumbs-down icon-white"></i>
+                  </button>
+                
+              </div>
+            </td>
+          </tr>
+        
+          <tr>
+            
+            <td>
+              
+              <div class="response-text">
+                sadkbh
+              </div>
+              
+              <div class="response-author-name">
+                — !!!!
+                
+                  <button type="button" class="btn btn-danger disabled">
+                    <i class="icon-thumbs-down icon-white"></i>
+                  </button>
+                
+              </div>
+            </td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+
+    
+</div>
+

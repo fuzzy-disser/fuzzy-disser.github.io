@@ -1,0 +1,427 @@
+body{
+
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: auto;
+    min-width: 1300px;
+    width: 1300px;
+
+}
+.header{
+	/* display:none; */
+    padding-top: 15px;
+    padding-bottom: 100px;
+    height: 100px;
+    
+    /* background: #fff; */
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+
+}
+.header-container{
+}
+.slogan{
+    width: 500px;
+    margin-left: 10px;
+    
+}
+.slogan h1 {
+    font-size: 32pt;
+}
+.logo {
+
+    width: 700px;
+    height: 100px;
+
+}
+.logo img {
+    margin-top: 10px;
+}
+.slogan em{
+    color: gray;
+}
+.contacts{
+    width: 200px;
+
+}
+.contacts > .phone {
+    font-size: 17pt;
+}
+.contacts > .email {
+    
+    display: block;
+}
+.contacts > .leave-req {
+    padding-top: 23px;
+    display: block;
+}
+.sidebar-nav{
+    min-width: 250px;
+}
+.nav-menu{
+
+    font-size: 16pt;
+}
+.nav-menu > li > a{
+    padding: 15px;
+
+}
+
+.nav-menu > li > a:hover,
+.nav-menu >  .active > a {
+
+}
+
+.nav-list {
+    font-size: 14pt;
+}
+.nav-list > li {
+    margin-left: 10px;
+}
+
+.nav-list > li > a{
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.pick-subject {
+    
+	font-size:12pt;
+
+}
+.nav-header {
+
+    /* font-size: 10pt; */
+}
+.new-teacher-promo > li{
+	font-size:14pt;
+	margin-top: 20px;
+	
+}
+.new-teacher-promo > li > ul > li.less, ul.less{
+	line-height: normal;
+	font-size:11pt;
+	margin-top: 10px;
+	color: #950f0f;
+	width: 400px;
+	text-align:justify;
+
+}
+
+.half {
+
+    margin-right: 30px;
+}
+
+.modal-body{
+    top: 5px;
+    max-height: 500px;
+}
+.modal.fade.in{
+    top: 5px;
+}
+.white-span{
+    color: #fff;
+    float: left;
+}
+.description{
+    width: 320px;
+    height: 120px;
+}
+.row-fluid .teacher-card{
+    padding: 10px;
+    margin-left: 0px;
+    min-height: 275px;
+    /* border-bottom: 1px solid #e3e3e3; */
+}
+.teacher-card img{
+
+}
+.teacher-card label{
+    color: #737373;
+}
+.teacher-info-photo img{
+    min-width: 277px;
+
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.teacher-surname{
+    
+    font-size: 18pt;
+    font-weight: bold;
+}
+.teacher-name{
+    font-size: 14pt;
+    padding-left: 20px;
+}
+.teacher-name-block{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    height: 40px;
+}
+
+.choose-teacher{
+	margin: 5px;
+
+}
+.btn-group{
+	margin-bottom: 10px;
+}
+
+
+.btn.active#dislike {
+
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #da4f49;
+  *background-color: #bd362f;
+  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+  background-repeat: repeat-x;
+  border-color: #bd362f #bd362f #802420;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  color: #ffffff;
+  background-color: #bd362f;
+  *background-color: #a9302a;
+  color: rgba(255, 255, 255, 0.75);
+	
+}
+
+.btn.active#like {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #5bb75b;
+  *background-color: #51a351;
+  background-image: -moz-linear-gradient(top, #62c462, #51a351);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+<  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+  background-image: -o-linear-gradient(top, #62c462, #51a351);
+  background-image: linear-gradient(to bottom, #62c462, #51a351);
+  background-repeat: repeat-x;
+  border-color: #51a351 #51a351 #387038;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+
+  color: #ffffff;
+  background-color: #51a351;
+  *background-color: #499249;
+	
+}
+
+.btn.active#like > i, .btn.active#dislike > i {
+	  background-image: url("../img/glyphicons-halflings-white.png");
+}
+
+.countItems {
+    color: lightgrey;
+    font-style: italic;
+    float: right;
+    font-size: 12pt;
+}
+.active > a > span.countItems{
+    color: white;
+}
+.teacher-info-table{
+
+    margin-top: 20px;
+}
+.teacher-card-short-info{
+    widht: 100%;
+
+
+}
+.teacher-info-card{
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.teacher-info-table td {
+    text-align:justify;
+    vertical-align: top;
+    padding: 10px;
+}
+.teacher-info-table tr {
+
+
+}
+.teacher-info-label{
+    width: 350px;
+    color: grey;
+    font-style: italic;
+    float: right;
+    padding-right: 10px;
+
+
+}
+.teacher-empty-label{
+    color: #e3e3e3;
+}
+img {
+}
+.price{
+    font-size: 21pt;
+    color: darkred;
+    max-width: 400px;
+}
+.nav-panel{
+}
+
+.choose-town-toggle-button {
+    margin-right: 20px;
+}
+ul.choose-town-menu > li.active > a,
+ul.choose-town-menu > li > a:hover,
+ul.choose-town-menu > li.active > a:hover {
+    background: #444444;
+}
+.dropdown-toggle{
+    display: block;
+}
+
+#subjects {
+    display: none;
+}
+
+#responses-table {
+    width: 100%;
+}
+#responses-table tr {
+    padding: 10px;
+}
+#responses-table td {
+    vertical-align: top;
+}
+#responses-table td.response-teacher-photo {
+    padding: 20px;
+    padding-top: 0px;
+    width: 180px;
+}
+#teachers td{
+    vertical-align: top;
+}
+.teachers-photo {
+    width: 180px;
+}
+.teachers-photo img {
+    border-radius: 4px;
+    padding: 10px;
+    padding-top: 0px;
+}
+#responses-table td.response-teacher-photo a {
+    margin-bottom: 20px;
+}
+#responses-table .response-text {
+    font-style:oblique;
+}
+#responses-table .response-teacher-name {
+    width: 100%;
+    min-height: 20px;
+
+}
+#responses-table .response-teacher-name span{
+    font-style:oblique;
+}
+#responses-table .response-teacher-name button{
+    float: right;
+    
+}
+#responses-table .response-author-name {
+    font-weight:bold;
+    float:right;
+}
+input {
+    height: inherit;
+}
+.mark-green {
+
+    Background: #0f0;
+}
+.mark-red {
+
+    Background: #f00;
+}
+.errorSummary {
+    background: #fdd5d5;
+    border-radius: 6px;
+    padding: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#call-me-phone {
+    width: 132px;
+}
+#call-me-form, #call-me-thankyou {
+    display: none;
+}
+.required {
+    font-weight: bold;
+    
+}
+.small{
+    font-size: 10pt;
+}
+.teacher-prepare-options {
+    list-style-type:none;
+}
+.disable-item {
+    font-style:italic;
+    color: lightgray;
+}
+.disable-item:hover {
+    background: transparent;
+}
+
+.footer{
+    margin-top: 100px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+.no-disk{
+    list-style-type:none;
+}
+
+.pagination ul > li.hide {
+    display: none;
+}
+.pagination ul > li.prev > a{
+    border-left: 1px solid #ddd;
+}
+.pagination ul > li.active > a,
+.pagination ul > li.active > a:hover,
+.pagination ul > li.active > a:active {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #da4f49;
+    color: white;
+}
+
+
+.block {
+    display: block;
+}
+
+.teacher-img {
+    border-radius: 4px;
+    float: left;
+    margin-right: 10px
+}
+
+.imagepreview {
+    margin-right: 30px;
+    border-radius: 4px;
+}
