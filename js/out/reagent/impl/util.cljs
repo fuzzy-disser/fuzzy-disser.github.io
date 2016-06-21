@@ -1,40 +1,21 @@
 (ns reagent.impl.util
-  (:require [reagent.debug :refer-macros [dbg log]]
-            [reagent.interop :refer-macros [.' .!]]
+  (:require [cljsjs.react]
+            [reagent.debug :refer-macros [dbg log warn]]
+            [reagent.interop :refer-macros [$ $!]]
             [clojure.string :as string]))
 
+(defonce react
+  (cond (exists? js/React) js/React
+        (exists? js/require) (or (js/require "react")
+                                 (throw (js/Error. "require('react') failed")))
+        :else (throw (js/Error. "js/React is missing"))))
+
 (def is-client (and (exists? js/window)
-                    (-> js/window (.' :document) nil? not)))
+                    (-> js/window ($ :document) nil? not)))
+
+(def ^:dynamic ^boolean *non-reactive* false)
 
 ;;; Props accessors
-
-(defn extract-props [v]
-  (let [p (nth v 1 nil)]
-    (if (map? p) p)))
-
-(defn extract-children [v]
-  (let [p (nth v 1 nil)
-        first-child (if (or (nil? p) (map? p)) 2 1)]
-    (if (> (count v) first-child)
-      (subvec v first-child))))
-
-(defn get-argv [c]
-  (.' c :props.argv))
-
-(defn get-props [c]
-  (-> (.' c :props.argv) extract-props))
-
-(defn get-children [c]
-  (-> (.' c :props.argv) extract-children))
-
-(defn reagent-component? [c]
-  (-> (.' c :props.argv) nil? not))
-
-(defn cached-react-class [c]
-  (.' c :cljsReactClass))
-
-(defn cache-react-class [c constructor]
-  (.! c :cljsReactClass constructor))
 
 ;; Misc utilities
 
@@ -64,6 +45,18 @@
         name-str
         (apply str start (map capitalize parts))))))
 
+(defn fun-name [f]
+  (let [n (or (and (fn? f)
+                   (or ($ f :displayName)
+                       ($ f :name)))
+              (and (implements? INamed f)
+                   (name f))
+              (let [m (meta f)]
+                (if (map? m)
+                  (:name m))))]
+    (-> n
+        str
+        (clojure.string/replace "$" "."))))
 
 (deftype partial-ifn [f args ^:mutable p]
   IFn
@@ -102,86 +95,8 @@
 
 (def ^:dynamic *always-update* false)
 
-(defonce roots (atom {}))
-
-(defn clear-container [node]
-  ;; If render throws, React may get confused, and throw on
-  ;; unmount as well, so try to force React to start over.
-  (try
-    (.' js/React unmountComponentAtNode node)
-    (catch js/Object e
-      (do (log "Error unmounting:")
-          (log e)))))
-
-(defn render-component [comp container callback]
-  (try
+(defn force-update [comp deep]
+  (if deep
     (binding [*always-update* true]
-      (.' js/React render (comp) container
-          (fn []
-            (binding [*always-update* false]
-              (swap! roots assoc container [comp container])
-              (if (some? callback)
-                (callback))))))
-    (catch js/Object e
-      (do (clear-container container)
-          (throw e)))))
-
-(defn re-render-component [comp container]
-  (render-component comp container nil))
-
-(defn unmount-component-at-node [container]
-  (swap! roots dissoc container)
-  (.' js/React unmountComponentAtNode container))
-
-(defn force-update-all []
-  (doseq [v (vals @roots)]
-    (apply re-render-component v))
-  "Updated")
-
-
-;;; Wrapper
-
-(deftype Wrapper [^:mutable state callback ^:mutable changed]
-
-  IAtom
-
-  IDeref
-  (-deref [this] state)
-
-  IReset
-  (-reset! [this newval]
-           (set! changed true)
-           (set! state newval)
-           (callback newval)
-           state)
-
-  ISwap
-  (-swap! [a f]
-    (-reset! a (f state)))
-  (-swap! [a f x]
-    (-reset! a (f state x)))
-  (-swap! [a f x y]
-    (-reset! a (f state x y)))
-  (-swap! [a f x y more]
-    (-reset! a (apply f state x y more)))
-
-  IEquiv
-  (-equiv [_ other]
-          (and (instance? Wrapper other)
-               ;; If either of the wrappers have changed, equality
-               ;; cannot be relied on.
-               (not changed)
-               (not (.-changed other))
-               (= state (.-state other))
-               (= callback (.-callback other))))
-
-  IPrintWithWriter
-  (-pr-writer [_ writer opts]
-    (-write writer "#<wrap: ")
-    (pr-writer state writer opts)
-    (-write writer ">")))
-
-(defn make-wrapper [value callback-fn args]
-  (Wrapper. value
-            (partial-ifn. callback-fn args nil)
-            false))
+      ($ comp forceUpdate))
+    ($ comp forceUpdate)))

@@ -1,4 +1,5 @@
-// Compiled by ClojureScript 0.0-2850 {}
+// Compiled by ClojureScript 1.9.76 {}
 goog.provide('reagent.interop');
 goog.require('cljs.core');
-reagent.interop.fvars = {};
+
+//# sourceMappingURL=interop.js.map?rel=1466484249214

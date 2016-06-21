@@ -1,0 +1,1 @@
+{:name fuzzy.prod, :doc nil, :excludes #{}, :use-macros nil, :require-macros nil, :uses nil, :requires {linear fuzzy.linear, fuzzy.linear fuzzy.linear}, :imports nil}

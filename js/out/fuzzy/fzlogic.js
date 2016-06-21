@@ -1,53 +1,69 @@
-// Compiled by ClojureScript 0.0-2850 {}
+// Compiled by ClojureScript 1.9.76 {}
 goog.provide('fuzzy.fzlogic');
 goog.require('cljs.core');
-/**
-* @param {...*} var_args
-*/
-fuzzy.fzlogic.and = (function() { 
-var and__delegate = function (x,next){
-return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(cljs.core.min,x,next);
-};
-var and = function (x,var_args){
-var next = null;
-if (arguments.length > 1) {
-var G__9949__i = 0, G__9949__a = new Array(arguments.length -  1);
-while (G__9949__i < G__9949__a.length) {G__9949__a[G__9949__i] = arguments[G__9949__i + 1]; ++G__9949__i;}
-  next = new cljs.core.IndexedSeq(G__9949__a,0);
-} 
-return and__delegate.call(this,x,next);};
-and.cljs$lang$maxFixedArity = 1;
-and.cljs$lang$applyTo = (function (arglist__9950){
-var x = cljs.core.first(arglist__9950);
-var next = cljs.core.rest(arglist__9950);
-return and__delegate(x,next);
+fuzzy.fzlogic.and = (function fuzzy$fzlogic$and(var_args){
+var args__7297__auto__ = [];
+var len__7290__auto___7346 = arguments.length;
+var i__7291__auto___7347 = (0);
+while(true){
+if((i__7291__auto___7347 < len__7290__auto___7346)){
+args__7297__auto__.push((arguments[i__7291__auto___7347]));
+
+var G__7348 = (i__7291__auto___7347 + (1));
+i__7291__auto___7347 = G__7348;
+continue;
+} else {
+}
+break;
+}
+
+var argseq__7298__auto__ = ((((1) < args__7297__auto__.length))?(new cljs.core.IndexedSeq(args__7297__auto__.slice((1)),(0),null)):null);
+return fuzzy.fzlogic.and.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__7298__auto__);
 });
-and.cljs$core$IFn$_invoke$arity$variadic = and__delegate;
-return and;
-})()
-;
-/**
-* @param {...*} var_args
-*/
-fuzzy.fzlogic.or = (function() { 
-var or__delegate = function (x,next){
-return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(cljs.core.max,x,next);
-};
-var or = function (x,var_args){
-var next = null;
-if (arguments.length > 1) {
-var G__9951__i = 0, G__9951__a = new Array(arguments.length -  1);
-while (G__9951__i < G__9951__a.length) {G__9951__a[G__9951__i] = arguments[G__9951__i + 1]; ++G__9951__i;}
-  next = new cljs.core.IndexedSeq(G__9951__a,0);
-} 
-return or__delegate.call(this,x,next);};
-or.cljs$lang$maxFixedArity = 1;
-or.cljs$lang$applyTo = (function (arglist__9952){
-var x = cljs.core.first(arglist__9952);
-var next = cljs.core.rest(arglist__9952);
-return or__delegate(x,next);
+
+fuzzy.fzlogic.and.cljs$core$IFn$_invoke$arity$variadic = (function (x,next){
+return cljs.core.apply.call(null,cljs.core.min,x,next);
 });
-or.cljs$core$IFn$_invoke$arity$variadic = or__delegate;
-return or;
-})()
-;
+
+fuzzy.fzlogic.and.cljs$lang$maxFixedArity = (1);
+
+fuzzy.fzlogic.and.cljs$lang$applyTo = (function (seq7344){
+var G__7345 = cljs.core.first.call(null,seq7344);
+var seq7344__$1 = cljs.core.next.call(null,seq7344);
+return fuzzy.fzlogic.and.cljs$core$IFn$_invoke$arity$variadic(G__7345,seq7344__$1);
+});
+
+fuzzy.fzlogic.or = (function fuzzy$fzlogic$or(var_args){
+var args__7297__auto__ = [];
+var len__7290__auto___7351 = arguments.length;
+var i__7291__auto___7352 = (0);
+while(true){
+if((i__7291__auto___7352 < len__7290__auto___7351)){
+args__7297__auto__.push((arguments[i__7291__auto___7352]));
+
+var G__7353 = (i__7291__auto___7352 + (1));
+i__7291__auto___7352 = G__7353;
+continue;
+} else {
+}
+break;
+}
+
+var argseq__7298__auto__ = ((((1) < args__7297__auto__.length))?(new cljs.core.IndexedSeq(args__7297__auto__.slice((1)),(0),null)):null);
+return fuzzy.fzlogic.or.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__7298__auto__);
+});
+
+fuzzy.fzlogic.or.cljs$core$IFn$_invoke$arity$variadic = (function (x,next){
+return cljs.core.apply.call(null,cljs.core.max,x,next);
+});
+
+fuzzy.fzlogic.or.cljs$lang$maxFixedArity = (1);
+
+fuzzy.fzlogic.or.cljs$lang$applyTo = (function (seq7349){
+var G__7350 = cljs.core.first.call(null,seq7349);
+var seq7349__$1 = cljs.core.next.call(null,seq7349);
+return fuzzy.fzlogic.or.cljs$core$IFn$_invoke$arity$variadic(G__7350,seq7349__$1);
+});
+
+
+//# sourceMappingURL=fzlogic.js.map?rel=1466484248781
